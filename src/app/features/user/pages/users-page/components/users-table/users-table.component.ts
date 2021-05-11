@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from 'src/app/features/user/models/user';
+import { User } from 'src/app/features/user/shared/models/user';
 
 @Component({
   selector: 'users-user-table',
@@ -29,7 +29,7 @@ export class UsersTableComponent implements OnInit, AfterViewInit, OnChanges {
 
   dataSource: MatTableDataSource<User>;
 
-  displayedColumns: string[] = ['id', 'nome', 'username', 'email'];
+  displayedColumns: string[] = ['id', 'nome', 'username', 'email', 'address'];
 
   constructor() {}
 

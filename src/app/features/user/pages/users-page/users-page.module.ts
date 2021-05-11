@@ -5,6 +5,7 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
 import { UsersPage } from './users-page.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { UsersPageRoutingModule } from './users-page-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [UsersTableComponent, UsersPage],
@@ -13,6 +14,7 @@ import { UsersPageRoutingModule } from './users-page-routing.module';
     MatTableModule,
     MatPaginatorModule,
     UsersPageRoutingModule,
+    SharedModule,
   ],
   bootstrap: [UsersPage],
 })
