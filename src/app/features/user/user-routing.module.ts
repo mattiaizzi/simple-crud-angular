@@ -15,6 +15,14 @@ const routes: Routes = [
             (m) => m.UsersPageModule
           ),
       },
+      {
+        path: 'new',
+        pathMatch: 'full',
+        loadChildren: () =>
+          import('./pages/users-add-page/users-add-page.module').then(
+            (m) => m.UsersAddPageModule
+          ),
+      },
     ],
   },
 ];

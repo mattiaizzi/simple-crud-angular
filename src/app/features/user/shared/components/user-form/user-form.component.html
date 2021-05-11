@@ -1,0 +1,45 @@
+<div class="container mat-elevation-z8">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="user-form-row">
+      <div class="user-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="user-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="user-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="user-form-row">
+      <div class="user-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Città</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="user-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Via</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="user-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Cap</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <button type="submit">Invio</button>
+  </form>
+</div>
