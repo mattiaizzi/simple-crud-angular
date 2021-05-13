@@ -1,22 +1,27 @@
 <div class="container mat-elevation-z8">
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h1>{{title | uppercase}}</h1>
+  <form [formGroup]="userForm" (ngSubmit)="handleSubmit()">
     <div class="user-form-row">
       <div class="user-form-field">
         <mat-form-field appearance="outline">
           <mat-label>Nome</mat-label>
-          <input matInput>
+          <input matInput formControlName="name" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="form.name?.errors?.required && !firstSubmit">required</mat-error>
         </mat-form-field>
       </div>
       <div class="user-form-field">
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput>
+          <input matInput formControlName="email" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="form.email?.errors?.required && !firstSubmit">required</mat-error>
+          <mat-error *ngIf="form.email?.errors?.email && !firstSubmit">invalid email</mat-error>
         </mat-form-field>
       </div>
       <div class="user-form-field">
         <mat-form-field appearance="outline">
           <mat-label>Username</mat-label>
-          <input matInput>
+          <input matInput formControlName="username" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="form.username?.errors?.required && !firstSubmit">required</mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -24,22 +29,35 @@
       <div class="user-form-field">
         <mat-form-field appearance="outline">
           <mat-label>Città</mat-label>
-          <input matInput>
+          <input matInput formControlName="address.city">
         </mat-form-field>
       </div>
       <div class="user-form-field">
         <mat-form-field appearance="outline">
           <mat-label>Via</mat-label>
-          <input matInput>
+          <input matInput formControlName="address.street">
         </mat-form-field>
       </div>
       <div class="user-form-field">
         <mat-form-field appearance="outline">
           <mat-label>Cap</mat-label>
-          <input matInput>
+          <input matInput formControlName="address.zipCode">
         </mat-form-field>
       </div>
     </div>
-    <button type="submit">Invio</button>
+    <div class="button-row">
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit">
+          <span class="material-icons">save</span>
+          Save
+        </button>
+      </div>
+      <div class="button-container">
+        <button mat-raised-button color="accent" (click)="resetForm()">
+          <span class="material-icons">refresh</span>
+          Reset
+        </button>
+      </div>
+      </div>
   </form>
 </div>
